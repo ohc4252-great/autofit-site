@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0e16">
+  <title>오토핏 · 운동 루틴 · 부위별 회복</title>
+  <meta name="description" content="나만의 루틴, 부위별 회복 상태, 종목별 무게 추이를 한 손에. 오토핏은 운동 기록을 더 오래 더 자세히 관리해주는 모바일 운동 앱입니다.">
+  <meta property="og:title" content="오토핏 — 운동 루틴 + 부위별 회복">
+  <meta property="og:description" content="운동 기록을 더 오래 더 자세히 관리하세요.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      color-scheme: dark;
+      --bg: #0a0e16;
+      --surface: #131923;
+      --text: #f1f3f5;
+      --muted: #98a2b3;
+      --line: #1f2937;
+      --primary: #3182f6;
+      --accent: #22c55e;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard", "Noto Sans KR", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ─────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(10,14,22,0.75);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto;
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── Hero ────────────────────────────── */
+    .hero {
+      max-width: 1080px; margin: 0 auto;
+      padding: 96px 24px 64px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(49,130,246,0.12);
+      color: var(--primary);
+      font-size: 13px; font-weight: 700;
+      margin-bottom: 22px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin: 0 0 22px;
+      font-weight: 900;
+    }
+    .lead {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 40px;
+    }
+    .cta-row {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 700; font-size: 15px;
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-secondary {
+      background: var(--surface); color: var(--text);
+      border: 1px solid var(--line);
+    }
+    .btn-disabled { opacity: 0.55; cursor: not-allowed; }
+
+    /* ── Section ─────────────────────────── */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing: -0.5px;
+      margin: 0 0 16px;
+      font-weight: 800;
+    }
+    .section-lead { color: var(--muted); margin-bottom: 48px; }
+
+    /* ── Feature grid ────────────────────── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px 24px;
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(49,130,246,0.14);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      font-size: 22px;
+    }
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 17px; font-weight: 800;
+    }
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── Pricing ─────────────────────────── */
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      max-width: 720px; margin: 0 auto;
+    }
+    .price-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: left;
+    }
+    .price-card.featured { border-color: var(--primary); }
+    .price-tag {
+      font-size: 13px; color: var(--muted); margin-bottom: 6px;
+    }
+    .price-amount {
+      font-size: 36px; font-weight: 900; margin: 0 0 4px;
+    }
+    .price-amount small { font-size: 14px; color: var(--muted); font-weight: 600; }
+    .price-bullets {
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .price-bullets li {
+      padding: 6px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .price-bullets li::before {
+      content: "✓"; color: var(--accent); font-weight: 800;
+    }
+
+    /* ── Footer ──────────────────────────── */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 24px 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 18px;
+    }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-meta { font-size: 12px; opacity: 0.7; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="brand">오토핏</span>
+    <div class="nav-links">
+      <a href="#features">기능</a>
+      <a href="#pricing">요금</a>
+      <a href="privacy.html">개인정보</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="badge">v1.0 · 안드로이드 · iOS</span>
+  <h1>나만의 운동 루틴,<br>부위별 회복까지 한 손에.</h1>
+  <p class="lead">
+    오토핏은 운동 기록을 더 오래 더 자세히 관리해주는 모바일 운동 앱입니다.
+    체감 난이도 기반 회복 가이드, 종목별 무게 추이, 눈바디 타임랩스까지.
+  </p>
+  <div class="cta-row">
+    <a class="btn btn-primary btn-disabled" aria-disabled="true">
+      Google Play 출시 예정
+    </a>
+    <a class="btn btn-secondary btn-disabled" aria-disabled="true">
+      App Store 출시 예정
+    </a>
+  </div>
+</header>
+
+<section id="features">
+  <div class="section-inner">
+    <h2>모든 운동을 한 흐름으로</h2>
+    <p class="section-lead">무료 플랜으로도 핵심 기능을 모두 쓸 수 있고, Pro로 한도를 풉니다.</p>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🏋️</div>
+        <h3>맞춤 루틴 빌더</h3>
+        <p>165 종목 라이브러리, 슈퍼세트, 자동 휴식 타이머까지 한 번에.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔥</div>
+        <h3>부위별 회복 상태</h3>
+        <p>체감 난이도와 운동량을 바탕으로 부위별 회복률을 한눈에 보여줍니다.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📈</div>
+        <h3>종목별 무게 추이</h3>
+        <p>7일·30일·1년·전 기간 — 종목마다 추정 1RM 흐름을 매끄러운 그래프로.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📸</div>
+        <h3>눈바디 타임랩스</h3>
+        <p>몸 변화 사진을 5장/초 슬라이드쇼로 재생. 최대 3,000장 보관.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔊</div>
+        <h3>11종 운동 음성</h3>
+        <p>한국어·영어 자연스러운 카운트다운 + 세트 안내. 백그라운드 재생 지원.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌏</div>
+        <h3>한·영 동시 지원</h3>
+        <p>모든 화면·음성·메뉴를 두 언어로 즉시 전환.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="background: var(--surface);">
+  <div class="section-inner">
+    <h2>요금</h2>
+    <p class="section-lead">루틴 3개·사진 30장·기본 음성은 무료. 한도 풀고 싶을 때 Pro.</p>
+    <div class="pricing">
+      <div class="price-card">
+        <div class="price-tag">무료</div>
+        <p class="price-amount">₩0</p>
+        <ul class="price-bullets">
+          <li>루틴 최대 3개</li>
+          <li>눈바디 30장</li>
+          <li>무게 추이 7일</li>
+          <li>기본 음성 1종</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <div class="price-tag" style="color: var(--primary)">Pro</div>
+        <p class="price-amount">₩3,990<small> / 월</small></p>
+        <p style="font-size:13px;color:var(--muted);margin:0;">또는 연간 ₩39,900 (월 환산 ₩3,325)</p>
+        <ul class="price-bullets">
+          <li>루틴 무제한 + 광고 제거</li>
+          <li>부위별 회복 상태 보기</li>
+          <li>무게 변화 추이 전 기간</li>
+          <li>눈바디 최대 3,000장</li>
+          <li>모든 음성 이용 가능</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="privacy.html">개인정보처리방침</a>
+      <a href="mailto:ohc4252@gmail.com">문의</a>
+    </div>
+    <div class="footer-meta">
+      © 2026 오토핏 · 본 서비스는 의학적 진단을 제공하지 않습니다.<br>
+      Made with ❤︎ in Seoul
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
