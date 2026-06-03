@@ -7,16 +7,15 @@
   <style>
     :root { color-scheme: light; --text:#191f28; --muted:#6b7684; --line:#e5e8eb; --bg:#f9fafb; --card:#fff; --primary:#3182f6; }
     body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.7; }
-    main { max-width:840px; margin:0 auto; padding:40px 20px 64px; }
+    main { max-width:920px; margin:0 auto; padding:40px 20px 64px; }
     article { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:32px; }
     h1 { margin:0 0 8px; font-size:30px; line-height:1.25; }
     h2 { margin:32px 0 10px; font-size:20px; line-height:1.35; }
+    h3 { margin:22px 0 8px; font-size:16px; }
     p, li { font-size:15px; }
     p { margin:8px 0; }
     ul, ol { padding-left:22px; }
-    li { margin:4px 0; }
     .meta { color:var(--muted); font-size:14px; margin-bottom:22px; }
-    .note { border-left:4px solid var(--primary); background:#f3f8ff; padding:12px 14px; border-radius:8px; margin:18px 0; }
     table { width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:14px; }
     th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
     th { background:#f5f6f8; font-weight:700; }
@@ -28,9 +27,9 @@
 <main>
   <article>
     <h1>오토핏 데이터 삭제 요청</h1>
-    <p class="meta">최종 업데이트: 2026년 6월 2일</p>
+    <p class="meta">최종 업데이트: 2026년 6월 3일</p>
 
-    <div class="note">이 페이지는 <strong>오토핏(AutoFit Routine)</strong> 앱 사용자가 계정 전체 또는 일부 데이터의 삭제를 요청하는 방법을 안내합니다.</div>
+    <p>이 페이지는 오토핏(AutoFit Routine) 앱 사용자가 데이터를 삭제하는 방법을 안내합니다. 오토핏은 별도의 계정이 없으며, 모든 데이터는 사용자의 기기 안에만 저장됩니다. 오토핏 서버에는 사용자 데이터가 보관되지 않습니다.</p>
 
     <h2>1. 앱 및 개발자 정보</h2>
     <ul>
@@ -41,48 +40,30 @@
     </ul>
 
     <h2>2. 데이터 삭제 방법</h2>
-
-    <h3>방법 A. 일부 데이터만 삭제 (계정은 유지)</h3>
+    <h3>방법 A. 일부 데이터만 삭제</h3>
     <ol>
-      <li>앱에서 삭제할 항목(운동 루틴, 운동 기록, 체중 기록, 회복 기록, 사용자 정의 운동 등)으로 이동합니다.</li>
+      <li>앱에서 삭제할 항목(운동 루틴, 운동 기록, 체중 기록, 인바디 기록, 회복 기록, 사진, 사용자 정의 운동 등)으로 이동합니다.</li>
       <li>해당 항목을 개별 삭제합니다.</li>
-      <li>로그인 상태라면, 삭제한 항목은 이 기기와 클라우드(Supabase) 양쪽에서 함께 삭제됩니다.</li>
+      <li>삭제는 즉시 기기에 반영됩니다.</li>
     </ol>
-    <p>특정 데이터의 삭제를 직접 요청하려면 <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a> 으로 삭제할 항목을 적어 보내주세요. 본인 확인 후 처리합니다.</p>
-
-    <h3>방법 B. 계정과 모든 클라우드 데이터 삭제 (회원 탈퇴)</h3>
+    <h3>방법 B. 모든 데이터 삭제</h3>
     <ol>
-      <li>삭제할 계정으로 앱에 로그인합니다.</li>
-      <li>앱 하단 <strong>설정(Settings)</strong> 탭으로 이동합니다.</li>
-      <li><strong>계정</strong> 영역에서 <strong>회원 탈퇴</strong>를 누릅니다.</li>
-      <li>안내를 확인하고 <strong>탈퇴하기</strong>를 누르면 계정과 모든 클라우드 데이터가 즉시 영구 삭제됩니다.</li>
+      <li>기기의 <strong>설정 → 애플리케이션 → 오토핏 → 저장공간</strong>으로 이동해 <strong>데이터 삭제(저장공간 지우기)</strong>를 누릅니다. 또는</li>
+      <li><strong>앱을 삭제(제거)</strong>합니다. 앱을 삭제하면 기기에 저장된 모든 오토핏 데이터가 함께 제거됩니다.</li>
     </ol>
+    <h3>방법 C. 백업 파일 삭제</h3>
+    <p>백업 내보내기로 만든 파일은 사용자의 기기/클라우드 저장소에 보관됩니다. 더 이상 필요하지 않으면 해당 파일을 직접 삭제하세요.</p>
+    <p>앱을 사용할 수 없는 등 도움이 필요하면 <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a> 으로 문의해 주세요.</p>
 
-    <h3>방법 C. 이메일로 삭제 요청</h3>
-    <p>앱을 사용할 수 없는 경우 <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a> 으로 요청해 주세요. 요청 시 앱 이름(오토핏 / AutoFit Routine)과 로그인에 사용한 Google 또는 Apple 계정 이메일을 함께 알려주시면 확인이 빠릅니다. 본인 확인 후 <strong>30일 이내</strong>에 처리합니다.</p>
-
-    <h2>3. 삭제·보관되는 데이터와 보관 기간</h2>
+    <h2>3. 삭제·보관되는 데이터</h2>
     <table>
       <thead><tr><th>구분</th><th>데이터</th><th>처리</th></tr></thead>
       <tbody>
-        <tr>
-          <td>삭제되는 데이터<br>(클라우드)</td>
-          <td>계정 이메일·사용자 ID, 운동 루틴, 운동 기록, 체중 기록, 회복 기록, 사용자 정의 운동, Pro 구독 상태</td>
-          <td>회원 탈퇴 시 즉시 삭제 / 이메일 요청 시 본인 확인 후 30일 이내 삭제. 삭제 후 오토핏 서버에 보관하지 않습니다.</td>
-        </tr>
-        <tr>
-          <td>기기 내 데이터</td>
-          <td>눈바디·운동 사진, 인바디 기록, 앱 설정, 선택 입력 프로필</td>
-          <td>클라우드에 저장되지 않습니다. 앱 내에서 개별 삭제하거나 앱을 삭제하면 제거됩니다.</td>
-        </tr>
-        <tr>
-          <td>보관될 수 있는 데이터</td>
-          <td>결제·구독 영수증 및 거래 기록</td>
-          <td>오토핏은 결제 수단 정보를 수집·저장하지 않습니다. 결제 영수증·거래 내역은 Google Play 또는 Apple App Store가 각사 정책과 관련 법령에 따라 보관하며, 오토핏 서버에는 저장되지 않습니다.</td>
-        </tr>
+        <tr><td>기기 내 데이터</td><td>운동 루틴·기록, 체중, 인바디 기록, 회복 기록, 사용자 정의 운동, 눈바디·운동 사진, 앱 설정, 선택 입력 프로필</td><td>모두 기기 안에만 저장됩니다. 위 방법 A~B로 삭제하거나 앱을 삭제하면 제거됩니다. 오토핏 서버에는 보관되지 않습니다.</td></tr>
+        <tr><td>보관될 수 있는 데이터</td><td>결제·구독 영수증 및 거래 기록</td><td>오토핏은 결제 수단 정보를 수집·저장하지 않습니다. 결제 영수증·거래 내역·구독 상태는 Google Play, Apple App Store, 구독 관리 서비스(RevenueCat)가 각사 정책과 관련 법령에 따라 보관하며, 오토핏 서버에는 저장되지 않습니다.</td></tr>
       </tbody>
     </table>
-    <p>로그아웃만으로는 클라우드 데이터가 삭제되지 않습니다. 데이터 삭제는 위 방법 A~C를 이용해 주세요.</p>
+    <p>앱 삭제는 Google Play 또는 Apple App Store의 유료 구독을 자동으로 해지하지 않습니다. 구독 해지는 각 스토어의 구독 관리 화면에서 직접 해야 합니다.</p>
 
     <h2>4. 문의</h2>
     <ul>
@@ -90,7 +71,7 @@
       <li>1차 회신: 영업일 기준 3일 이내</li>
       <li>최종 처리: 본인 확인 후 30일 이내</li>
     </ul>
-    <p>오토핏 개인정보처리방침은 <a href="privacy.html">여기</a>에서 확인할 수 있습니다.</p>
+    <p>오토핏 개인정보처리방침은 <a href="privacy.html">privacy.html</a> 에서 확인할 수 있습니다.</p>
   </article>
 </main>
 </body>

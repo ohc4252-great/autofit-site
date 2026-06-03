@@ -7,16 +7,15 @@
   <style>
     :root { color-scheme: light; --text:#191f28; --muted:#6b7684; --line:#e5e8eb; --bg:#f9fafb; --card:#fff; --primary:#3182f6; }
     body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.7; }
-    main { max-width:840px; margin:0 auto; padding:40px 20px 64px; }
+    main { max-width:920px; margin:0 auto; padding:40px 20px 64px; }
     article { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:32px; }
     h1 { margin:0 0 8px; font-size:30px; line-height:1.25; }
     h2 { margin:32px 0 10px; font-size:20px; line-height:1.35; }
+    h3 { margin:22px 0 8px; font-size:16px; }
     p, li { font-size:15px; }
     p { margin:8px 0; }
     ul, ol { padding-left:22px; }
-    li { margin:4px 0; }
     .meta { color:var(--muted); font-size:14px; margin-bottom:22px; }
-    .note { border-left:4px solid var(--primary); background:#f3f8ff; padding:12px 14px; border-radius:8px; margin:18px 0; }
     table { width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:14px; }
     th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
     th { background:#f5f6f8; font-weight:700; }
@@ -28,9 +27,9 @@
 <main>
   <article>
     <h1>AutoFit Data Deletion Request</h1>
-    <p class="meta">Last updated: June 2, 2026</p>
+    <p class="meta">Last updated: June 3, 2026</p>
 
-    <div class="note">This page explains how users of <strong>AutoFit (AutoFit Routine)</strong> can request deletion of their account or of some of their data.</div>
+    <p>This page explains how users of AutoFit (AutoFit Routine) can delete their data. AutoFit has no account, and all data is stored on your device only. No user data is kept on AutoFit servers.</p>
 
     <h2>1. App and developer</h2>
     <ul>
@@ -41,48 +40,30 @@
     </ul>
 
     <h2>2. How to delete your data</h2>
-
-    <h3>Option A. Delete only some data (keep your account)</h3>
+    <h3>Option A. Delete only some data</h3>
     <ol>
-      <li>Open the item you want to remove (workout routine, workout log, body weight, recovery record, custom exercise, etc.).</li>
+      <li>Open the item you want to remove (workout routine, workout log, body weight, InBody record, recovery record, photo, custom exercise, etc.).</li>
       <li>Delete that item.</li>
-      <li>If you are signed in, the deleted item is removed from both this device and the cloud (Supabase).</li>
+      <li>The deletion is applied to your device immediately.</li>
     </ol>
-    <p>To request deletion of specific data, email <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a> with the items to delete. We process the request after verifying your identity.</p>
-
-    <h3>Option B. Delete your account and all cloud data</h3>
+    <h3>Option B. Delete all data</h3>
     <ol>
-      <li>Sign in with the account you want to delete.</li>
-      <li>Open the <strong>Settings</strong> tab.</li>
-      <li>In the <strong>Account</strong> area, tap <strong>Delete Account</strong>.</li>
-      <li>Confirm to permanently and immediately delete your account and all cloud data.</li>
+      <li>Go to your device <strong>Settings → Apps → AutoFit → Storage</strong> and tap <strong>Clear data (clear storage)</strong>, or</li>
+      <li><strong>Uninstall</strong> the app. Uninstalling removes all AutoFit data stored on the device.</li>
     </ol>
+    <h3>Option C. Delete backup files</h3>
+    <p>Files created with backup export are kept in your own device or cloud storage. Delete those files yourself if you no longer need them.</p>
+    <p>If you cannot use the app or need help, email <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a>.</p>
 
-    <h3>Option C. Request by email</h3>
-    <p>If you cannot use the app, email <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a>. Include the app name (AutoFit / AutoFit Routine) and the Google or Apple account email you signed in with. We process verified requests within <strong>30 days</strong>.</p>
-
-    <h2>3. Data deleted, retained, and retention period</h2>
+    <h2>3. Data deleted and retained</h2>
     <table>
       <thead><tr><th>Category</th><th>Data</th><th>Handling</th></tr></thead>
       <tbody>
-        <tr>
-          <td>Deleted data<br>(cloud)</td>
-          <td>Account email and user ID, workout routines, workout logs, body weight, recovery records, custom exercises, Pro subscription status</td>
-          <td>Deleted immediately on account deletion / within 30 days for verified email requests. Not retained on AutoFit servers after deletion.</td>
-        </tr>
-        <tr>
-          <td>On-device data</td>
-          <td>Progress/workout photos, InBody records, app settings, optional profile</td>
-          <td>Not stored in the cloud. Removed when you delete them in the app or uninstall the app.</td>
-        </tr>
-        <tr>
-          <td>Data that may be retained</td>
-          <td>Purchase/subscription receipts and transaction records</td>
-          <td>AutoFit does not collect or store payment method details. Receipts and transaction records are retained by Google Play or the Apple App Store under their own policies and applicable law, not on AutoFit servers.</td>
-        </tr>
+        <tr><td>On-device data</td><td>Workout routines and logs, body weight, InBody records, recovery records, custom exercises, progress/workout photos, app settings, optional profile</td><td>Stored on your device only. Removed when you delete it (Options A–B) or uninstall the app. Not retained on AutoFit servers.</td></tr>
+        <tr><td>Data that may be retained</td><td>Purchase/subscription receipts and transaction records</td><td>AutoFit does not collect or store payment method details. Receipts, transaction records, and subscription status are retained by Google Play, the Apple App Store, and the subscription management service (RevenueCat) under their own policies and applicable law, not on AutoFit servers.</td></tr>
       </tbody>
     </table>
-    <p>Signing out alone does not delete cloud data. Use options A–C above to delete data.</p>
+    <p>Uninstalling the app does not automatically cancel a Google Play or Apple App Store subscription. Cancel subscriptions directly in each store's subscription settings.</p>
 
     <h2>4. Contact</h2>
     <ul>
@@ -90,7 +71,7 @@
       <li>First response: within 3 business days</li>
       <li>Completion: within 30 days after identity verification</li>
     </ul>
-    <p>The AutoFit Privacy Policy is available <a href="privacy-en.html">here</a>.</p>
+    <p>The AutoFit Privacy Policy is available at <a href="privacy-en.html">privacy-en.html</a>.</p>
   </article>
 </main>
 </body>
