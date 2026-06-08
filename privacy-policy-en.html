@@ -15,144 +15,177 @@
     p, li { font-size:15px; }
     p { margin:8px 0; }
     ul { padding-left:22px; }
-    .meta { color:var(--muted); font-size:14px; margin-bottom:22px; }
-    .note { border-left:4px solid var(--primary); background:#f3f8ff; padding:12px 14px; border-radius:8px; margin:18px 0; }
+    .lang-switch { display:flex; justify-content:flex-end; gap:8px; margin-bottom:18px; color:var(--muted); font-size:14px; }
+    .lang-switch a { color:var(--muted); text-decoration:none; }
+    .lang-switch a.active { color:var(--text); font-weight:700; }
     table { width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:14px; }
     th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
     th { background:#f5f6f8; font-weight:700; }
     a { color:var(--primary); }
     code { background:#f1f3f5; padding:1px 5px; border-radius:4px; font-size:13px; }
+    @media (max-width: 640px) { article { padding:22px; border-radius:8px; } h1 { font-size:26px; } }
+
   </style>
 </head>
 <body>
 <main>
   <article>
+    <div class="lang-switch" aria-label="Language">
+      <a href="privacy.html" lang="ko">&#54620;&#44397;&#50612;</a>
+      <span>/</span>
+      <a class="active" href="privacy-en.html" lang="en">English</a>
+    </div>
     <h1>AutoFit Privacy Policy</h1>
-    <p class="meta">Effective and last updated: June 3, 2026</p>
-
-    <p>AutoFit Routine (<code>com.motionroutine.app</code>) is a fitness log app that helps you record and manage workout routines, workout logs, body weight, InBody entries, recovery records, progress photos, and workout photos.</p>
-    <div class="note">AutoFit stores <strong>all of your data on your device only</strong>. There is no account or sign-in, and your workout and health records are not synced to AutoFit servers or any cloud. The free version may show Google AdMob ads.</div>
-
-    <h2>1. Who operates the app</h2>
-    <ul>
-      <li>Service name: AutoFit Routine</li>
-      <li>App package: <code>com.motionroutine.app</code></li>
-      <li>Operator and privacy contact: AutoFit operator</li>
-      <li>Email: <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a></li>
-    </ul>
-
-    <h2>2. What information the app stores</h2>
-    <p>AutoFit has no account. All of the following stays <strong>on your device only</strong>. It is not sent to AutoFit servers or backed up to any cloud.</p>
-    <table>
-      <thead><tr><th>Information</th><th>Why it is used</th></tr></thead>
-      <tbody>
-        <tr><td>Workout routines and logs</td><td>To show plans, sets, weights, reps, time, notes, and progress</td></tr>
-        <tr><td>Body weight records</td><td>To show weight trends</td></tr>
-        <tr><td>InBody records</td><td>To show body composition data you enter or import from CSV</td></tr>
-        <tr><td>Recovery records</td><td>To show recovery status by body part</td></tr>
-        <tr><td>Progress photos and workout photos</td><td>To track visual changes and workout history</td></tr>
-        <tr><td>Optional profile details</td><td>Age, sex, height, activity level for app calculations</td></tr>
-        <tr><td>App settings</td><td>Language, theme, notifications, voice, vibration, default timers</td></tr>
-        <tr><td>Subscription/purchase status</td><td>To check whether Pro features are available (see section 5)</td></tr>
-      </tbody>
-    </table>
-    <p>To move data to another device, you must use the <strong>backup export/import</strong> feature yourself; this only happens by your own action.</p>
-
-    <h2>3. Ads and automatically collected information</h2>
-    <p>The free version may show Google AdMob ads. The Google Mobile Ads SDK may automatically collect or share the following information with Google for ad serving, ad measurement, and fraud prevention.</p>
-    <table>
-      <thead><tr><th>Information</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><td>Advertising ID</td><td>Android Advertising ID (AAID) and, if permitted, iOS IDFA</td></tr>
-        <tr><td>IP address and approximate location</td><td>IP address may estimate country/city-level location. AutoFit does not collect precise GPS location for ads.</td></tr>
-        <tr><td>App interactions</td><td>App launch, ad impressions, ad clicks, rewarded/video ad views</td></tr>
-        <tr><td>Device and app information</td><td>Device type, OS, app version, ads SDK information</td></tr>
-        <tr><td>Diagnostic information</td><td>Ads SDK performance, errors, load time, fraud signals</td></tr>
-      </tbody>
-    </table>
-    <p>Whether ads are personalized depends on your region, consent choices, device settings, and Google ad settings. In regions that require additional consent (EEA, UK, Switzerland), AutoFit uses a Google-required consent method (UMP or a Google-certified CMP) before serving certain ads.</p>
-    <p>You can reset or delete the advertising ID in device settings, and change tracking permission on iOS. AutoFit <strong>does not send your workout logs, weight, InBody records, recovery records, or photos to Google AdMob for ad targeting.</strong></p>
-
-    <h2>4. App permissions</h2>
-    <table>
-      <thead><tr><th>Permission</th><th>Why it is used</th></tr></thead>
-      <tbody>
-        <tr><td>Camera</td><td>To take workout/body photos</td></tr>
-        <tr><td>Photos/media access</td><td>To import photos you choose or export photos to your gallery</td></tr>
-        <tr><td>Notifications</td><td>To show local workout and rest timer notifications</td></tr>
-        <tr><td>Vibration and audio</td><td>Set/rest cues, voice guidance, feedback</td></tr>
-        <tr><td>Internet</td><td>To process purchases/subscriptions and show ads</td></tr>
-        <tr><td>Google Play / Apple App Store billing</td><td>To process Pro purchases</td></tr>
-        <tr><td>Advertising ID</td><td>May be used by AdMob for ad serving, measurement, and fraud prevention. On Android the <code>AD_ID</code> permission may be required when the ads SDK is included.</td></tr>
-      </tbody>
-    </table>
-
-    <h2>5. Payments and subscriptions</h2>
-    <p>AutoFit may offer Pro features. Payments are processed through <strong>Google Play or the Apple App Store</strong>, and subscription status is managed through <strong>RevenueCat</strong> (a subscription management service provider). AutoFit does not collect or store payment card numbers or payment method details.</p>
-    <table>
-      <thead><tr><th>Provider</th><th>Role</th><th>Information processed</th></tr></thead>
-      <tbody>
-        <tr><td>Google LLC / Apple Inc.</td><td>Billing, subscription management</td><td>Purchase history, receipts, order ID, subscription status</td></tr>
-        <tr><td>RevenueCat, Inc.</td><td>Verify purchase/subscription status and restore entitlements</td><td>Anonymous app user ID, purchase receipts/subscription status, device/store identifiers</td></tr>
-      </tbody>
-    </table>
-    <p>RevenueCat verifies Pro entitlement from store receipts, and the app keeps only the result (active state, expiry) as a cache on your device. No separate account identifier (such as email) is used for payments. Subscriptions may auto-renew each period until you cancel; pricing, renewal period, refunds, and subscription management follow each store's policy and the terms shown at checkout.</p>
-
-    <h2>6. Health and fitness information</h2>
-    <p>Workout logs, weight records, InBody records, and recovery records may be sensitive health information. This information is processed <strong>on your device only</strong> and is not used for ad targeting, location tracking, or data sales.</p>
-    <p>AutoFit is not a medical service. It does not diagnose, treat, prescribe for, or prevent any disease or medical condition. App statistics and recovery guidance are for personal reference only. If you have pain, an injury, an illness, or a medical question, contact a qualified medical professional.</p>
-
-    <h2>7. Retention and deletion</h2>
-    <ul>
-      <li>Data stays on your device until you delete it or uninstall the app.</li>
-      <li>InBody records are limited to 500 entries for app performance.</li>
-      <li>Photos are managed up to 30 on the free plan and up to 3,000 on the Pro plan.</li>
-    </ul>
-    <p>How to delete your data:</p>
-    <ul>
-      <li>Delete individual routines, logs, weight, InBody, and photos in the app.</li>
-      <li>Delete all app data: device app info → clear storage/data, or uninstall the app.</li>
-      <li>You manage any <strong>backup files</strong> you exported yourself.</li>
-    </ul>
-    <p>AutoFit does not store your data on a server, so there is no server-side deletion process. However, <strong>uninstalling the app does not automatically cancel a Google Play or Apple App Store subscription.</strong> Cancel subscriptions directly in each store's subscription settings.</p>
-
-    <h2>8. Your rights</h2>
-    <table>
-      <thead><tr><th>Right</th><th>How to use it</th></tr></thead>
-      <tbody>
-        <tr><td>Access</td><td>View all records directly in the app</td></tr>
-        <tr><td>Correction</td><td>Edit records in the app</td></tr>
-        <tr><td>Deletion</td><td>Delete individual records, clear app data, or uninstall</td></tr>
-        <tr><td>Portability</td><td>Export your records to a file with backup export</td></tr>
-      </tbody>
-    </table>
-    <p>Backup export does not include photo files. Photos can be saved to your device gallery using the separate gallery export feature. Send requests to <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a>; we verify identity and respond within 30 days.</p>
-
-    <h2>9. How we protect information</h2>
-    <ul>
-      <li>Data is stored in the OS app sandbox (<code>/data/data/com.motionroutine.app/</code>).</li>
-      <li>Device backup extraction (<code>adb backup</code>) is disabled (<code>android:allowBackup="false"</code>).</li>
-      <li>Workout and health records are never sent to AutoFit servers and are kept separate from ads SDK data (advertising ID, IP, ad interactions).</li>
-    </ul>
-
-    <h2>10. Children under 13</h2>
-    <p>AutoFit is not directed to children under 13. A parent or guardian must supervise and consent to use by a child under 13, and we will guide data deletion on a guardian's request.</p>
-
-    <h2>11. Changes</h2>
-    <ul>
-      <li><strong>June 3, 2026</strong>: Removed cloud sync, Google/Apple sign-in, and Supabase storage; moved to fully on-device storage. Described purchases/subscriptions via RevenueCat + Google Play/App Store.</li>
-      <li><strong>June 2, 2026</strong>: Added Google AdMob, advertising ID, ads-related automatic collection, and billing/subscription notices.</li>
-      <li><strong>May 29, 2026</strong>: First published.</li>
-    </ul>
-
-    <h2>12. Contact</h2>
-    <ul>
-      <li>Privacy contact: AutoFit operator</li>
-      <li>Email: <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a></li>
-      <li>First reply: within 3 business days</li>
-      <li>Final handling: within 30 days after identity verification</li>
-    </ul>
-    <p>Please include the app name (AutoFit Routine) and package name (<code>com.motionroutine.app</code>).</p>
+<p>Effective and last updated: June 8, 2026</p>
+<p>AutoFit Routine (<code>com.motionroutine.app</code>) is a fitness log app that helps you record and manage workout routines, workout logs, body weight, InBody entries, recovery records, progress photos, and workout photos.</p>
+<p>In short:</p>
+<ul>
+<li>Workout, health, and photo records are stored on your device.</li>
+<li>AutoFit does not provide account sign-in or AutoFit cloud sync.</li>
+<li>To move data to another device, you must export and import a backup file yourself.</li>
+<li>Pro purchases and restoration may be processed by Google Play, the Apple App Store, and RevenueCat.</li>
+<li>If the free version includes an ads SDK, Google AdMob may process information needed to serve ads.</li>
+<li>AutoFit does not use workout records, health records, InBody records, recovery records, or photos for ad targeting, data sales, insurance, employment, credit, or lending decisions.</li>
+</ul>
+<h2>1. Operator</h2>
+<ul>
+<li>Service name: AutoFit Routine</li>
+<li>App package: <code>com.motionroutine.app</code></li>
+<li>Business name: HANSEON LABS (Owner: Hanseon Oh)</li>
+<li>Privacy officer: Hanseon Oh</li>
+<li>Email: <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a></li>
+</ul>
+<h2>2. Information stored on your device</h2>
+<p>AutoFit stores the following information on your device to provide app features. It is not automatically sent to AutoFit servers or backed up to AutoFit cloud storage.</p>
+<table>
+<thead><tr><th>Information</th><th>Why it is used</th></tr></thead>
+<tbody>
+<tr><td>Workout routines and logs</td><td>To show plans, sets, weights, reps, time, notes, and progress</td></tr>
+<tr><td>Body weight records</td><td>To show weight trends</td></tr>
+<tr><td>InBody records</td><td>To show body composition data you enter or import from CSV</td></tr>
+<tr><td>Recovery records</td><td>To show recovery status by body part</td></tr>
+<tr><td>Progress photos and workout photos</td><td>To track visual changes and workout history</td></tr>
+<tr><td>Optional profile details</td><td>Age, sex, height, and activity level for app calculations</td></tr>
+<tr><td>App settings</td><td>Language, theme, notifications, voice, vibration, and default timers</td></tr>
+<tr><td>Pro status cache</td><td>To show whether Pro features are available in the app</td></tr>
+</tbody></table>
+<p>Backup export does not include photo files. Photos can be saved separately to your device gallery through the gallery export feature.</p>
+<h2>3. Information that may be processed off device</h2>
+<h3>3.1 Payments and subscriptions</h3>
+<p>AutoFit may offer Pro features. Payments are processed by Google Play or the Apple App Store. Subscription verification and purchase restoration may be handled by RevenueCat.</p>
+<p>AutoFit does not collect or store payment card numbers, bank account details, or payment method details.</p>
+<table>
+<thead><tr><th>Provider</th><th>Role</th><th>Information that may be processed</th></tr></thead>
+<tbody>
+<tr><td>Google LLC / Apple Inc.</td><td>Billing, subscription management, refunds, tax, and fraud controls</td><td>Purchase history, receipts, order ID, subscription status, and store account information handled by the store</td></tr>
+<tr><td>RevenueCat, Inc.</td><td>Verify purchase/subscription status and restore Pro entitlement</td><td>Anonymous app user ID, purchase receipts, subscription status, product ID, device/store identifiers, diagnostics</td></tr>
+</tbody></table>
+<p>RevenueCat checks subscription status using an anonymous app user ID, not an AutoFit account email. The app stores only the Pro active state and expiry date as an on-device cache.</p>
+<p>Deleting the app does not automatically cancel a paid subscription. Cancel subscriptions directly in Google Play or Apple App Store subscription settings.</p>
+<h3>3.2 Free version with an ads SDK</h3>
+<p>If the free version includes the Google AdMob ads SDK, the Google Mobile Ads SDK may automatically process the following information for ad serving, measurement, fraud prevention, security, and diagnostics.</p>
+<table>
+<thead><tr><th>Information</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Advertising ID</td><td>Android Advertising ID (AAID) and, if permitted on iOS, IDFA</td></tr>
+<tr><td>IP address and approximate location</td><td>IP address may estimate country or city-level location. AutoFit does not collect precise GPS location for ads.</td></tr>
+<tr><td>Ad interactions</td><td>Ad requests, impressions, clicks, rewarded/video ad views</td></tr>
+<tr><td>Device and app information</td><td>Device type, operating system, app version, ads SDK information</td></tr>
+<tr><td>Diagnostics</td><td>Ads SDK performance, errors, load time, invalid activity signals</td></tr>
+</tbody></table>
+<p>Personalized ads depend on your region, consent choices, device settings, and Google ad settings. In regions that require additional consent, such as the EEA, the United Kingdom, and Switzerland, a Google-required consent method such as UMP or a Google-certified CMP must be used before serving certain ads.</p>
+<p>AutoFit does not send workout logs, body weight, InBody records, recovery records, or photos to Google AdMob for ad targeting.</p>
+<h2>4. App permissions</h2>
+<table>
+<thead><tr><th>Permission</th><th>Why it is used</th></tr></thead>
+<tbody>
+<tr><td>Camera</td><td>To take workout or body progress photos</td></tr>
+<tr><td>Photos/media access</td><td>To import photos you choose or export photos to your gallery</td></tr>
+<tr><td>Notifications</td><td>To show local workout and rest timer notifications</td></tr>
+<tr><td>Vibration and audio</td><td>To provide set/rest cues, voice guidance, and haptic feedback</td></tr>
+<tr><td>Internet</td><td>To process purchases/subscriptions and, if included, show ads</td></tr>
+<tr><td>Google Play / Apple App Store billing</td><td>To process Pro purchases</td></tr>
+<tr><td>Advertising ID</td><td>In Android builds that include an ads SDK, this may be used for ad serving, measurement, and fraud prevention.</td></tr>
+</tbody></table>
+<h2>5. Information AutoFit does not collect</h2>
+<p>Under the current app structure, AutoFit does not directly collect or store the following on AutoFit servers:</p>
+<ul>
+<li>Name, email address, phone number, mailing address, or password</li>
+<li>Payment card numbers, bank account details, or payment method details</li>
+<li>Precise GPS location</li>
+<li>Contacts, calendar, text messages, call logs, installed app lists</li>
+<li>Microphone recordings or voice files</li>
+<li>Apple HealthKit, Google Fit, or Health Connect data</li>
+<li>Server copies of workout records, health records, InBody records, recovery records, photos, or backup files</li>
+</ul>
+<h2>6. Health and medical notice</h2>
+<p>Workout logs, body weight records, InBody records, and recovery records may be sensitive health or fitness information. This information is processed on your device and is not used for ad targeting, location tracking, data sales, insurance, employment, credit, or lending decisions.</p>
+<p>AutoFit is not a medical service. It does not diagnose, treat, prescribe for, or prevent any disease or medical condition. App statistics and recovery guidance are for personal reference only. If you have pain, an injury, an illness, or a medical question, contact a qualified medical professional.</p>
+<h2>7. Retention and deletion</h2>
+<ul>
+<li>Data stays on your device until you delete it or uninstall the app.</li>
+<li>InBody records are limited to 500 entries for app performance.</li>
+<li>Progress and workout photos are managed up to 30 on the free plan and up to 3,000 on the Pro plan.</li>
+<li>Backup files you export are controlled and deleted by you.</li>
+</ul>
+<p>How to delete your data:</p>
+<ul>
+<li>Delete individual routines, logs, weight records, InBody records, and photos in the app.</li>
+<li>Clear app storage/data in device settings.</li>
+<li>Uninstall the app.</li>
+</ul>
+<p>AutoFit does not store your data on its own server, so there is no server-side deletion process for workout and health records. However, purchase receipts, subscription status, and transaction records may be retained by Google Play, the Apple App Store, and RevenueCat under their own policies and applicable law.</p>
+<h2>8. Your rights and choices</h2>
+<table>
+<thead><tr><th>Right or choice</th><th>How to use it</th></tr></thead>
+<tbody>
+<tr><td>Access</td><td>View all records directly in the app</td></tr>
+<tr><td>Correction</td><td>Edit records in the app</td></tr>
+<tr><td>Deletion</td><td>Delete individual records, clear app data, or uninstall</td></tr>
+<tr><td>Portability</td><td>Export your records to a backup file</td></tr>
+<tr><td>Limit ads</td><td>Change device advertising settings, iOS tracking permission, and any in-app consent choices</td></tr>
+</tbody></table>
+<p>You may email requests to <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a>. We may need to verify the request and will respond within 30 days after verification unless a different period is required by applicable law.</p>
+<h2>9. Notice for users in the United States</h2>
+<p>Some U.S. state privacy laws (such as the California CCPA/CPRA) apply only to businesses that meet certain thresholds, such as revenue or processing volume. AutoFit may not currently meet those thresholds, but where those laws apply, you may request access, correction, deletion, portability, or opt-out.</p>
+<p>AutoFit does not sell workout or health records or photos, and does not use sensitive health or fitness information for personalized advertising or cross-context behavioral advertising.</p>
+<p>Some states, such as Washington, broadly protect &quot;consumer health data.&quot; AutoFit's workout, body weight, InBody, and recovery records are processed on your device only and are not transmitted to AutoFit servers, so AutoFit does not collect, sell, or share them.</p>
+<h2>10. Safeguards</h2>
+<ul>
+<li>Data is stored in the operating system app sandbox.</li>
+<li>Android backup extraction through <code>adb backup</code> is disabled with <code>android:allowBackup=&quot;false&quot;</code>.</li>
+<li>Workout and health records are not sent to AutoFit servers and are kept separate from ads SDK data.</li>
+<li>Purchase entitlements are checked through store receipts and RevenueCat results; payment card details are not processed in AutoFit.</li>
+<li>Backup files are outside the app once exported, so you are responsible for storing them safely.</li>
+</ul>
+<h2>11. Children</h2>
+<p>AutoFit is not directed to children under 14 in Korea or under 13 in the United States (per COPPA). If a child under that age uses the app, a parent or guardian must supervise and consent to that use. On a guardian request, we will guide deletion steps.</p>
+<h2>12. International transfers</h2>
+<p>AutoFit does not transfer workout records, health records, InBody records, recovery records, or photos to AutoFit servers or outside your country. However, during Pro payment and subscription verification, some information may be transferred internationally as follows.</p>
+<table>
+<thead><tr><th>Recipient</th><th>Country</th><th>Items transferred</th><th>Purpose</th><th>Retention</th></tr></thead>
+<tbody>
+<tr><td>Google LLC / Apple Inc.</td><td>United States and other countries where they operate</td><td>Purchase history, receipts, order ID, subscription status, store account identifiers</td><td>Billing, subscription management, refunds, tax, fraud prevention</td><td>As required by their policies and applicable law</td></tr>
+<tr><td>RevenueCat, Inc.</td><td>United States</td><td>Anonymous app user ID, purchase receipts, subscription status, product ID, device/store identifiers, diagnostics</td><td>Verify purchase/subscription status, restore Pro entitlement</td><td>As required by their policies and applicable law</td></tr>
+</tbody></table>
+<p>Their processing is governed by their own terms and privacy policies. You may decline these international transfers, but Pro payment and purchase restoration may then be limited.</p>
+<h2>13. Changes</h2>
+<p>If this policy changes, we update the date above. Important changes may also be announced through the app or store listing.</p>
+<p>Change history:</p>
+<ul>
+<li>June 8, 2026: Specified the operator (business name) and privacy officer, split the children's age threshold (14 in Korea / 13 in the U.S.), itemized international transfers, and aligned the policy to a U.S. and Korea launch.</li>
+<li>June 3, 2026: Revised for on-device storage, user-managed backup, RevenueCat/store purchases, and ads-SDK-enabled builds based on the current app architecture.</li>
+<li>May 29, 2026: First published.</li>
+</ul>
+<h2>14. Contact</h2>
+<ul>
+<li>Privacy officer: Hanseon Oh</li>
+<li>Business name: HANSEON LABS (Owner: Hanseon Oh)</li>
+<li>Email: <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a></li>
+<li>First reply: within 3 business days</li>
+<li>Final handling: within 30 days after identity verification</li>
+</ul>
+<p>Please include the app name (AutoFit Routine), package name (<code>com.motionroutine.app</code>), your country or state/province, and the type of request.</p>
   </article>
 </main>
 </body>

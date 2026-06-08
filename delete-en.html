@@ -16,6 +16,9 @@
     p { margin:8px 0; }
     ul, ol { padding-left:22px; }
     .meta { color:var(--muted); font-size:14px; margin-bottom:22px; }
+    .lang-switch { display:flex; justify-content:flex-end; gap:8px; margin-bottom:18px; color:var(--muted); font-size:14px; }
+    .lang-switch a { color:var(--muted); text-decoration:none; }
+    .lang-switch a.active { color:var(--text); font-weight:700; }
     table { width:100%; border-collapse:collapse; margin:12px 0 18px; font-size:14px; }
     th, td { border:1px solid var(--line); padding:10px; text-align:left; vertical-align:top; }
     th { background:#f5f6f8; font-weight:700; }
@@ -26,8 +29,14 @@
 <body>
 <main>
   <article>
+    <div class="lang-switch" aria-label="Language">
+      <a href="delete.html" lang="ko">한국어</a>
+      <span>/</span>
+      <a class="active" href="delete-en.html" lang="en">English</a>
+    </div>
+
     <h1>AutoFit Data Deletion Request</h1>
-    <p class="meta">Last updated: June 3, 2026</p>
+    <p class="meta">Last updated: June 8, 2026</p>
 
     <p>This page explains how users of AutoFit (AutoFit Routine) can delete their data. AutoFit has no account, and all data is stored on your device only. No user data is kept on AutoFit servers.</p>
 
@@ -35,7 +44,7 @@
     <ul>
       <li>App name: AutoFit (AutoFit Routine)</li>
       <li>App package: <code>com.motionroutine.app</code></li>
-      <li>Developer / operator: AutoFit operator</li>
+      <li>Developer / operator: HANSEON LABS (Owner: Hanseon Oh)</li>
       <li>Contact email: <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a></li>
     </ul>
 
@@ -48,11 +57,11 @@
     </ol>
     <h3>Option B. Delete all data</h3>
     <ol>
-      <li>Go to your device <strong>Settings → Apps → AutoFit → Storage</strong> and tap <strong>Clear data (clear storage)</strong>, or</li>
-      <li><strong>Uninstall</strong> the app. Uninstalling removes all AutoFit data stored on the device.</li>
+      <li>Go to your device Settings → Apps → AutoFit → Storage and tap Clear data (clear storage), or</li>
+      <li>Uninstall the app. Uninstalling removes all AutoFit data stored on the device.</li>
     </ol>
     <h3>Option C. Delete backup files</h3>
-    <p>Files created with backup export are kept in your own device or cloud storage. Delete those files yourself if you no longer need them.</p>
+    <p>Files created with backup export are kept in the location you choose. Delete those files yourself if you no longer need them.</p>
     <p>If you cannot use the app or need help, email <a href="mailto:richanseon@gmail.com">richanseon@gmail.com</a>.</p>
 
     <h2>3. Data deleted and retained</h2>
