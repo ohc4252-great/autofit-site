@@ -32,6 +32,10 @@
     .nav-inner a { color: var(--text); }
     .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; }
     .brand img { width: 28px; height: 28px; border-radius: 7px; }
+    .spacer { flex: 1; }
+    .lang-switch { display: inline-flex; gap: 8px; color: var(--muted); font-size: 14px; }
+    .lang-switch a { color: var(--muted); }
+    .lang-switch a.active { color: var(--text); font-weight: 800; }
     main { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
     h1 { font-size: clamp(30px, 5vw, 42px); letter-spacing: -0.8px; margin: 0 0 12px; font-weight: 900; }
     .sub { color: var(--muted); margin: 0 0 40px; font-size: 16px; }
@@ -65,6 +69,12 @@
   <div class="nav-inner">
     <a class="brand" href="index.html"><img src="img/icon.png" alt="오토핏 아이콘">오토핏</a>
     <span style="color:var(--muted);font-size:14px;">· 지원</span>
+    <span class="spacer"></span>
+    <span class="lang-switch" aria-label="언어 선택">
+      <a class="active" href="support.html" lang="ko">KO</a>
+      <span>/</span>
+      <a href="support-en.html" lang="en">EN</a>
+    </span>
   </div>
 </nav>
 
@@ -112,7 +122,8 @@
   <a href="index.html">홈</a>·
   <a href="privacy.html">개인정보처리방침</a>·
   <a href="terms.html">이용약관</a>·
-  <a href="delete.html">데이터 삭제</a><br>
+  <a href="delete.html">데이터 삭제</a>·
+  <a href="support-en.html" lang="en">English</a><br>
   <span style="opacity:0.7;display:inline-block;margin-top:10px;">© 2026 오토핏</span>
 </footer>
 

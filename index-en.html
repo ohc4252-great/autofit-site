@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0e16">
+  <title>AutoFit Routine · Start and finish your workout with one tap</title>
+  <meta name="description" content="AutoFit Routine is a workout tracking app that moves through sets, rest timers, and the next exercise with one tap. Track custom exercises, weights, body-part heatmaps, InBody records, and progress photos on your own device.">
+  <meta property="og:title" content="AutoFit Routine — Start and finish your workout with one tap">
+  <meta property="og:description" content="Sets, rest timers, and the next exercise flow automatically so you can focus on training.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/banner.png">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/icon.png">
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      color-scheme: dark;
+      --bg: #0a0e16;
+      --surface: #131923;
+      --surface-2: #0e131c;
+      --text: #f1f3f5;
+      --muted: #98a2b3;
+      --line: #1f2937;
+      --primary: #3182f6;
+      --accent: #22c55e;
+    }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(10,14,22,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 12px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; }
+    .brand img { width: 30px; height: 30px; border-radius: 8px; }
+    .nav-links { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .lang-switch {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-left: 4px; padding-left: 18px; border-left: 1px solid var(--line);
+      color: var(--muted); font-size: 14px;
+    }
+    .lang-switch a { color: var(--muted); }
+    .lang-switch a.active { color: var(--text); font-weight: 800; }
+    .lang-switch a:hover { color: var(--text); }
+    .hero { max-width: 1080px; margin: 0 auto; padding: 84px 24px 48px; text-align: center; }
+    .badge {
+      display: inline-block; padding: 6px 14px; border-radius: 999px;
+      background: rgba(49,130,246,0.12); color: var(--primary);
+      font-size: 13px; font-weight: 700; margin-bottom: 22px;
+    }
+    h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.14; margin: 0 0 20px; font-weight: 900; }
+    .lead { font-size: clamp(16px, 2vw, 19px); color: var(--muted); max-width: 660px; margin: 0 auto 32px; }
+    .hero-banner {
+      max-width: 880px; margin: 8px auto 0; border-radius: 18px; overflow: hidden;
+      border: 1px solid var(--line); box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7);
+    }
+    .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 36px 0 8px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 22px; border-radius: 12px; font-weight: 700; font-size: 15px;
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--line); }
+    .btn-disabled { opacity: 0.5; cursor: default; }
+    .showcase { padding: 64px 24px; border-top: 1px solid var(--line); }
+    .showcase:nth-child(even) { background: var(--surface-2); }
+    .showcase-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .showcase:nth-of-type(even) .showcase-text { order: 2; }
+    .showcase-img {
+      border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+      box-shadow: 0 24px 60px -30px rgba(0,0,0,0.7);
+    }
+    .kicker { color: var(--primary); font-weight: 800; font-size: 14px; margin-bottom: 10px; }
+    .showcase-text h2 { font-size: clamp(24px, 3.4vw, 34px); margin: 0 0 14px; font-weight: 800; line-height: 1.2; }
+    .showcase-text p { color: var(--muted); font-size: 15.5px; margin: 0; }
+    .more { padding: 80px 24px; border-top: 1px solid var(--line); }
+    .more-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+    .more h2 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 14px; font-weight: 800; }
+    .more-lead { color: var(--muted); margin: 0 auto 44px; max-width: 580px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; text-align: left; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 26px 22px; }
+    .card .ic { width: 42px; height: 42px; border-radius: 11px; background: rgba(49,130,246,0.14); display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: 14px; }
+    .card h3 { margin: 0 0 7px; font-size: 16px; font-weight: 800; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .cta { padding: 92px 24px; text-align: center; border-top: 1px solid var(--line); background: var(--surface-2); }
+    .cta h2 { font-size: clamp(28px, 4.4vw, 40px); margin: 0 0 16px; font-weight: 900; }
+    .cta p { color: var(--muted); margin: 0 0 32px; }
+    footer { border-top: 1px solid var(--line); padding: 40px 24px 56px; color: var(--muted); font-size: 13px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-meta { font-size: 12px; opacity: 0.7; }
+    @media (max-width: 760px) {
+      .showcase-inner { grid-template-columns: 1fr; gap: 26px; }
+      .showcase:nth-of-type(even) .showcase-text { order: 0; }
+      .showcase-img { max-width: 460px; margin: 0 auto; }
+      .nav-links { gap: 16px; }
+      .lang-switch { padding-left: 0; border-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="brand"><img src="img/icon.png" alt="AutoFit icon">AutoFit</span>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="support-en.html">Support</a>
+      <a href="privacy-en.html">Privacy</a>
+      <a href="terms-en.html">Terms</a>
+      <span class="lang-switch" aria-label="Language">
+        <a href="index.html" lang="ko">KO</a>
+        <span>/</span>
+        <a class="active" href="index-en.html" lang="en">EN</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="badge">iOS · Android</span>
+  <h1>Start and finish<br>your workout with one tap</h1>
+  <p class="lead">
+    Build your routine once, then let AutoFit move through sets, rest timers, and the next exercise automatically.
+    Keep your attention on training instead of tapping through screens.
+  </p>
+  <div class="hero-banner">
+    <img src="img/banner.png" alt="AutoFit one-tap routine flow" width="880">
+  </div>
+  <div class="cta-row">
+    <span class="btn btn-primary btn-disabled">App Store coming soon</span>
+    <span class="btn btn-secondary btn-disabled">Google Play coming soon</span>
+  </div>
+</header>
+
+<main id="features">
+  <section class="showcase">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <div class="kicker">One-tap workout flow</div>
+        <h2>Run your routine from start to finish with one button</h2>
+        <p>Press start once and AutoFit handles set progress, automatic rest timers, and the next exercise. You can train without repeatedly checking or controlling your phone.</p>
+      </div>
+      <div class="showcase-img"><img src="img/onetouch.png" alt="One-tap routine start and progress" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <div class="kicker">Exercise library · Custom exercises</div>
+        <h2>Use built-in exercises or create your own</h2>
+        <p>Search the exercise library, add movements to your routine, or create your own exercises with names, target muscles, and set details. Custom exercises are managed like built-in exercises.</p>
+      </div>
+      <div class="showcase-img"><img src="img/exercises.png" alt="Exercise library and custom exercise setup" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <div class="kicker">Records · Progress</div>
+        <h2>Track weights, reps, and progress by exercise</h2>
+        <p>Log weight and reps for each exercise, then review trends across 7-day, 30-day, and yearly views. Your training volume and progress stay organized in one place.</p>
+      </div>
+      <div class="showcase-img"><img src="img/records.png" alt="Exercise records and progress charts" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <div class="kicker">Body-part heatmaps</div>
+        <h2>See training and recovery by body part</h2>
+        <p>Visualize training volume by muscle group and review recovery heatmaps to spot areas that may need rest. It helps you plan balanced training without guesswork.</p>
+      </div>
+      <div class="showcase-img"><img src="img/heatmap.png" alt="Training and recovery heatmaps" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <div class="kicker">Detailed settings</div>
+        <h2>Set weights, reps, timers, and rest your way</h2>
+        <p>Configure each routine with the weight, reps, workout time, and rest time that fit your training. AutoFit keeps the flow consistent once you start.</p>
+      </div>
+      <div class="showcase-img"><img src="img/settings.png" alt="Weight, rep, time, and rest settings" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="showcase">
+    <div class="showcase-inner">
+      <div class="showcase-text">
+        <div class="kicker">Progress photos · Timelapse</div>
+        <h2>Capture visual progress on your device</h2>
+        <p>Record progress and workout photos, then play them back as a timelapse to see physical changes over time. Photos stay on your device unless you export them yourself.</p>
+      </div>
+      <div class="showcase-img"><img src="img/photos.png" alt="Progress photos and timelapse" loading="lazy"></div>
+    </div>
+  </section>
+</main>
+
+<section class="more">
+  <div class="more-inner">
+    <h2>More ways to manage training</h2>
+    <p class="more-lead">Features designed to make tracking more precise and everyday use easier.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ic">⚖️</div>
+        <h3>InBody record support</h3>
+        <p>Record body composition data together with training so you can review changes in one place.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🔊</div>
+        <h3>Voice workout guidance</h3>
+        <p>Get countdowns and set cues by voice, including stable playback during background workouts.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🌏</div>
+        <h3>Korean and English</h3>
+        <p>Switch screens, voice guidance, and policy pages between Korean and English.</p>
+      </div>
+      <div class="card">
+        <div class="ic">⏱️</div>
+        <h3>Automatic rest timer</h3>
+        <p>When a set ends, rest starts automatically and moves you into the next exercise at the right time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Start your workout with one tap</h2>
+  <p>AutoFit Routine is coming soon to iOS and Android.</p>
+  <div class="cta-row" style="justify-content:center;">
+    <a class="btn btn-secondary" href="support-en.html">Support</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="support-en.html">Support</a>
+      <a href="privacy-en.html">Privacy Policy</a>
+      <a href="terms-en.html">Terms of Service</a>
+      <a href="delete-en.html">Data Deletion</a>
+      <a href="index.html" lang="ko">한국어</a>
+      <a href="mailto:richanseon@gmail.com">Contact</a>
+    </div>
+    <div class="footer-meta">
+      © 2026 AutoFit Routine · AutoFit is not a medical service and does not provide diagnosis or treatment.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
